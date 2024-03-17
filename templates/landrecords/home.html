@@ -1,0 +1,61 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with Picture Upload</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'landrecords/css/home.css' %}"> 
+</head>
+<body>
+    <div class="container">
+        <h2>New Registration of Land</h2>
+        <form method="post">
+          {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name:*</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+        </div>
+        <div class="form-group">
+            <label for="fname">Father's Name:*</label>
+            <input type="text" id="fname" name="fname" autocomplete="fname" >
+        </div>
+        <div class="form-group">
+            <label for="state">State:*</label>
+            <input type="text" id="state" name="state" autocomplete="state" required>
+        </div>
+        <div class="form-group">
+            <label for="district">District:*</label>
+            <input type="text" id="district" name="district" autocomplete="district" >
+        </div>
+        <div class="form-group">
+            <label for="city">City:*</label>
+            <input type="text" id="city" name="city" autocomplete="city" >
+        </div>
+        <div class="form-group">
+            <label for="pincode">Pincode:*</label>
+            <input type="text" id="pincode" maxlength="6" name="pincode" autocomplete="pincode" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" >
+        </div>
+        {% comment %} <div class="form-group">
+            <label for="comments">Comments:</label>
+            <textarea id="comments" name="comments" rows="4" required></textarea>
+        </div> {% endcomment %}
+        <div class="form-group">
+            <label for="image">Upload Land Registry/ROR:(pdf)*</label>
+            <input type="file" id="landregistry" name="landregistry" accept=".pdf" >
+        </div>
+        <div class="form-group">
+            <label for="image">Upload Parivaar Registry:(pdf)*</label>
+            <input type="file" id="parivaarregistry" name="parivaarregistry" accept=".pdf" >
+        </div>
+        <div class="form-group">
+            <button type="submit">ADD DATA</button>
+        </div>
+        </form>
+    </div>
+</body>
+</html>
